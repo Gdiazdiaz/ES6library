@@ -1,14 +1,5 @@
-const contact = document.querySelector('#contact');
-const addBook = document.querySelector('#add-book');
-const bookList = document.querySelector('#book-list');
-const bookListButton = document.querySelector('.booklist');
-const addBookButton = document.querySelector('.addbook');
-const contactButton = document.querySelector('.contact');
-const library = document.querySelector('.books-container');
-const logo = document.querySelector('.nav-logo');
-const form = document.querySelector('#form');
+import {contact, addBook, bookList, bookListButton, addBookButton, contactButton, library, logo, form} from './modules/consts.js';
 import listOfBooks from './modules/bookList.js';
-console.log(listOfBooks);
 
 const openBookList = () => {
     bookList.style.display = 'flex';
@@ -40,15 +31,10 @@ form.addEventListener('submit', (e) => {
     let author = document.querySelector('#book-author').value;
     let id = Math.random() * 100000;
     addBookTo(title, author, id);
+    form.reset();
 });
 
-class Book {
-    constructor(title, author, id){
-        this.title = title;
-        this.author = author;
-        this.id = id;
-    }
-}
+import Book from './modules/book.js'
 
 const addBookTo = (title, author, id) => {
     let newBook = new Book(title, author, id);
@@ -58,23 +44,25 @@ const addBookTo = (title, author, id) => {
     displayBooks();
 }
 
-const deleteBook = (id) => {
-    let i = 0;
-    let current;
-    while(listOfBooks[i].id != id){
-        current = listOfBooks[i];
-        i++;
-    }
-    console.log(listOfBooks[i]);
+const deleteBook = (id) =>{
+    console.log(id);
+    const resultBooks = listOfBooks.filter((book) => book.id !== id);
+    localStorage.setItem('listOfBooks', JSON.stringify(resultBooks));
+    window.location.reload();
 }
 
-const displayBooks = () => {
+let displayBooks = () => {
     let bookgenerator = '';
     listOfBooks.forEach((book) => {
       bookgenerator += `<div class="book">
       <p class="book-text">"${book.title}" by ${book.author}</p>
-      <button type="button" class="book-button" id="${book.id}" onClick=deleteBook>Remove</button>
+      <button type="button" class="book-button" id="${book.id}">Remove</button>
   </div>`;
+  library.addEventListener('DOMSubtreeModified', () => {
+    document.querySelectorAll('.book-button').forEach((bookBtn) => {
+        bookBtn.addEventListener('click', () => deleteBook(book.id))
+      })
+  })
     });
     library.innerHTML = bookgenerator;
 }
@@ -82,3 +70,4 @@ const displayBooks = () => {
 window.onload = () => {
     displayBooks();
 }
+

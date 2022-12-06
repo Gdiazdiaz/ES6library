@@ -40,7 +40,7 @@ span {
 
 #book-list {
     margin-top: 100px;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 10px;
 }
@@ -63,7 +63,7 @@ span {
 }
 
 #add-book {
-    display: block;
+    display: none;
 }
 
 #contact {
