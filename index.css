@@ -94,3 +94,12 @@ span {
   flex-direction: column;
   margin: 100px;
 }
+
+.dt-container {
+  margin-top: 38px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #d4af37;
+}

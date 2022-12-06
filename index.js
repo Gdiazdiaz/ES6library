@@ -1,7 +1,12 @@
 import {
-  contact, addBook, bookList, bookListButton, addBookButton, contactButton, library, logo, form,
+  contact, addBook, bookList, bookListButton, addBookButton, contactButton, library, logo, form, dtContainer
 } from './modules/consts.js';
 import listOfBooks from './modules/bookList.js';
+import { DateTime } from "./modules/luxon.js";
+const now = DateTime.now();
+let dategenerator = '';
+dategenerator += `<h2>${now}</h2>`;
+dtContainer.innerHTML = dategenerator;
 
 import Book from './modules/book.js';
 
