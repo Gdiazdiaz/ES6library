@@ -8,4 +8,6 @@ const library = document.querySelector('.books-container');
 const logo = document.querySelector('.nav-logo');
 const form = document.querySelector('#form');
 
-export {contact, addBook, bookList, bookListButton, addBookButton, contactButton, library, logo, form}
+export {
+  contact, addBook, bookList, bookListButton, addBookButton, contactButton, library, logo, form,
+};
