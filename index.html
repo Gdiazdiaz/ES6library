@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <title>Library</title>
 </head>
 <body>
     <nav class="nav-container">
@@ -16,14 +16,16 @@
             <li><a class="nav-item contact" href="#">Contact</a></li>
         </ul></a>
     </nav>
+    <section>
+        <div class="dt-container">
+            
+        </div>
+    </section>
 
     <section id="book-list">
         <h1 class="section-title">Book List</h1>
         <div class="books-container">
-            <div class="book">
-                <p class="book-text">"book-title" by book-author</p>
-                <button type="button" class="book-button" >Remove</button>
-            </div>
+            
         </div>
     </section>
 
@@ -33,7 +35,7 @@
             <form id="form">
                 <input class="book-title" id="book-title" name="book-title" type="text" placeholder="Title">
                 <input class="book-author" id="book-author" name="book-author" type="text" placeholder="Author">
-                <button class="add-button">Add</button>
+                <button type="submit" class="add-button">Add</button>
             </form>
         </div>
     </section>
@@ -46,6 +48,6 @@
         </div>
     </section>
 
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 </html>
