@@ -10,4 +10,6 @@ const logo = document.querySelector('.nav-logo');
 const form = document.querySelector('#form');
 
 export {
-  contact, addBook, bookList, bookListButton, addBookButton, contactButton, library, logo, form, dtContainer};
+  contact, addBook, bookList, bookListButton, addBookButton,
+  contactButton, library, logo, form, dtContainer,
+};

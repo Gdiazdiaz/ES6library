@@ -1,14 +1,16 @@
 import {
-  contact, addBook, bookList, bookListButton, addBookButton, contactButton, library, logo, form, dtContainer
+  addBookButton, contactButton, library, logo, form, dtContainer,
+  contact, addBook, bookList, bookListButton,
 } from './modules/consts.js';
 import listOfBooks from './modules/bookList.js';
-import { DateTime } from "./modules/luxon.js";
-const now = DateTime.now();
-let dategenerator = '';
-dategenerator += `<h2>${now}</h2>`;
-dtContainer.innerHTML = dategenerator;
+import { DateTime } from './modules/luxon.js';
 
 import Book from './modules/book.js';
+
+const dt = DateTime.now();
+let dategenerator = '';
+dategenerator += `<h2>${dt.month}-${dt.day}-${dt.year} // ${dt.hour}:${dt.minute}</h2>`;
+dtContainer.innerHTML = dategenerator;
 
 const openBookList = () => {
   bookList.style.display = 'flex';

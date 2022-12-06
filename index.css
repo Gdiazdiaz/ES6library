@@ -97,6 +97,7 @@ span {
 
 .dt-container {
   margin-top: 38px;
+  margin-right: 5px;
   font-size: 12px;
   display: flex;
   flex-direction: column;
